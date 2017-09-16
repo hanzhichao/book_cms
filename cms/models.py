@@ -55,7 +55,9 @@ class Story(models.Model):
         self.modified = datetime.datetime.now()
         super(Story, self).save()
 
-
+    admin_objects = modles.Manager
+    objects = ViewableManager()
+    
 class ViewableManager(models.Manager):
     def get_query_set(self):
         default_queryset = super(ViewableManager, self).get_query_set()
