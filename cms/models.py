@@ -55,7 +55,7 @@ class Story(models.Model):
         self.modified = datetime.datetime.now()
         super(Story, self).save()
 
-    admin_objects = modles.Manager
+    admin_objects = models.Manager
     objects = ViewableManager()
     
 class ViewableManager(models.Manager):
